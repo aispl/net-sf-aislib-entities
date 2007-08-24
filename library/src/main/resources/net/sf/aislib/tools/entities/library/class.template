@@ -1,0 +1,20 @@
+package $packageName;
+
+// THIS FILE HAS BEEN GENERATED AUTOMAGICALLY. DO NOT EDIT!
+
+/**
+ * Class with static fields generated from entities declared in specified XML file.
+ *
+ * @author AIS Development Team
+ */
+public class $className {
+
+#foreach ($entity in $entities)
+  #if ($entity.name.startsWith("MSG_"))
+  public static final int $entity.name = $entity.value;
+  #else
+  public static final String $entity.name = "$entity.value";
+  #end
+
+#end
+}
