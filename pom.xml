@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.sf.aislib.tools.entities</groupId>
+  <artifactId>entities-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>Entities to java code converter</name>
+
+  <scm>
+    <connection>scm:svn:https://aislib.svn.sourceforge.net/svnroot/aislib/Java/tools/entities/trunk/</connection>
+  </scm>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <configuration>
+            <tagBase>scm:svn:https://aislib.svn.sourceforge.net/svnroot/aislib/Java/tools/entities/tags/</tagBase>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>net.sf.aislib.tools.entities</groupId>
+        <artifactId>library</artifactId>
+        <version>${pom.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>library</module>
+<!--
+    <module>plugin-m1</module>
+-->
+    <module>plugin-m2</module>
+  </modules>
+
+  <distributionManagement>
+    <repository>
+      <id>aislib-sf-prod</id>
+      <url>scp://shell.sf.net/home/groups/a/ai/aislib/htdocs/repos/prod</url>
+    </repository>
+    <snapshotRepository>
+      <id>aislib-sf-dev</id>
+      <url>scp://shell.sf.net/home/groups/a/ai/aislib/htdocs/repos/dev</url>
+    </snapshotRepository>
+  </distributionManagement>
+</project>
