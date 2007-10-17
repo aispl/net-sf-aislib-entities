@@ -12,6 +12,14 @@
   <packaging>maven-plugin</packaging>
 
   <name>Maven2 Plugin</name>
+  <description>Entities to java code converter - Maven2 plugin</description>
+  <url>http://aislib.sf.net/Java/tools/entities</url>
+
+  <licenses>
+    <license>
+      <url>http://software.ais.pl/licenses/aislib-LICENSE.txt</url>
+    </license>
+  </licenses>
 
   <dependencies>
     <dependency>

@@ -11,10 +11,10 @@ import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.project.MavenProject;
 
 /**
+ * Generate class file with constants.
+ *
  * @goal generate
- *
  * @phase generate-sources
- *
  * @author pikus
  */
 public class EntitiesGeneratingMojo extends AbstractMojo {
@@ -25,18 +25,18 @@ public class EntitiesGeneratingMojo extends AbstractMojo {
   private File outputDirectory;
 
   /**
-   * @parameter
+   * @parameter name of source file containig entities.
    * @required
    */
   private File sourceFile;
 
   /**
-   * @parameter
+   * @parameter name of result file name (<tt>.java</tt> extension will be added).
    */
   private String resultName = "Entities";
 
   /**
-   * @parameter
+   * @parameter package name.
    * @required
    */
   private String packageName;
@@ -52,6 +52,7 @@ public class EntitiesGeneratingMojo extends AbstractMojo {
     try {
       Processor processor = new Processor();
       processor.setSource(sourceFile);
+      processor.setClassName(resultName);
       processor.setPackageName(packageName);
       processor.setDestinationDirectory(outputDirectory);
       processor.process();

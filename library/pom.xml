@@ -11,7 +11,16 @@
   <groupId>net.sf.aislib.tools.entities</groupId>
   <artifactId>library</artifactId>
   <packaging>jar</packaging>
-  <name>Library</name>
+  <name>Entities to java code converter - Library</name>
+  <description>Entities to java code converter - Library</description>
+  <url>http://aislib.sf.net/Java/tools/entities</url>
+
+
+  <licenses>
+    <license>
+      <url>http://software.ais.pl/licenses/aislib-LICENSE.txt</url>
+    </license>
+  </licenses>
 
   <dependencies>
     <dependency>
