@@ -11,7 +11,7 @@
   <artifactId>plugin-m2</artifactId>
   <packaging>maven-plugin</packaging>
 
-  <name>Maven2 Plugin</name>
+  <name>Entities to java code converter - Maven2 Plugin</name>
   <description>Entities to java code converter - Maven2 plugin</description>
   <url>http://aislib.sf.net/Java/tools/entities</url>
 
