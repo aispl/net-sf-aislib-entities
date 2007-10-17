@@ -25,7 +25,7 @@ public class EntitiesGeneratingMojo extends AbstractMojo {
   private File outputDirectory;
 
   /**
-   * @parameter name of source file containig entities.
+   * @parameter name of source file containing entities.
    * @required
    */
   private File sourceFile;
