@@ -1,0 +1,21 @@
+ ------
+ Home
+ ------
+ ------
+ ------
+
+Entities to java code converter
+
+  AIS.PL "Entities to java code converted" tool converts DTD file containing entities into source code of java
+  class with static constants.
+
+  This approach is very useful when entities are used in XML configuration files for naming objects
+  and those objects are referenced from java code.
+
+  Project has been started in 2002 as a plugin for Maven1.
+
+  In 2007 source code has been imported into {{{http://aislib.svn.sourceforge.net/viewvc/aislib/Java/tools/entities/}SVN}}
+  on SourceForge.
+
+  Version 1.0 of Ant tasks and Maven2 plugin has been released in October, 2007 and published
+  to Maven2 repository, under <<<net.sf.aislib.tools.entities>>> group.

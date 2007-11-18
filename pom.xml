@@ -76,5 +76,11 @@
         scp://shell.sf.net/home/groups/a/ai/aislib/htdocs/repos/dev
       </url>
     </snapshotRepository>
+    <site>
+      <id>aislib-sf-site</id>
+      <url>
+        scp://use_site_stage-deploy__for_deploying
+      </url>
+    </site>
   </distributionManagement>
 </project>

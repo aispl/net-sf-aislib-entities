@@ -1,0 +1,63 @@
+ ------
+ Using Maven2 plugin
+ ------
+ ------
+ ------
+
+Using Maven2 plugin
+
+ Maven2 plugin for allows user to generate class with entities as a part of build process
+ controlled by Maven2.
+
+ Plugin is configured to be executed in <<<generate-sources>>> phase.
+
+ For description of goal see plugin documentation: {{{./modules/plugin-m2-1.0/plugin-info.html}version 1.0}}
+ or {{{./modules/plugin-m2-1.1-SNAPSHOT/plugin-info.html}version 1.1-SNAPSHOT}}.
+
+* Generating code as a part of build process.
+
+ By default source is being generated into <<<${project.build.directory}/generated-sources/entities>>>
+ (in default setup it points to <<<target/generated-sources/entities>>>)
+ directory. Plugin also adds this directory to list of directories containing source code, so this code
+ is available for further processing (compilation). <<<${project.build.directory}>>> should not be stored
+ in CVS/SVN.
+
+ Minimal <<<pom.xml>>> should contains:
+
++-----------------+
+<project>
+  [...]
+  <build>
+    <plugins>
+      [...]
+      <plugin>
+       <artifactId>plugin-m2</artifactId>
+       <groupId>net.sf.aislib.tools.entities</groupId>
+       <version>1.0</version>
+       <executions>
+         <execution>
+           <goals>
+             <goal>generate</goal>
+           </goals>
+           <configuration>
+             <packageName>root.package.name</packageName>
+             <sourceFile>path/to/entities.dtd</sourceFile>
+           </configuration>
+         </execution>
+       </executions>
+      </plugin>
+      [...]
+    </plugins>
+  </build>
+  [...]
+</project>
++-----------------+
+
+ where <<<root.package.name>>> is a package name that should be used as a main package name
+ for generated classes (generators adds a subpackage names to root name) and
+ <<<path/to/entities.dtd>>> is a location of file containing entities.
+
+* Storing generated code in source repository
+
+ Plugin also may be used to generated source code stored in source code repository.
+ For example of such configuration see samples in {{{../mapping/plugin-usage.html}Mapping}}.
