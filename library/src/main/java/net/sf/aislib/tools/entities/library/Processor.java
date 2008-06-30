@@ -75,7 +75,7 @@ public class Processor {
     values.put("packageName", packageName);
     values.put("entities", parseEntities(source));
 
-    String packagePath = packageName.replace(".", File.separator);
+    String packagePath = packageName.replace('.', File.separatorChar);
     File outDir = new File(destination, packagePath);
     if (!outDir.exists()) {
       outDir.mkdirs();
