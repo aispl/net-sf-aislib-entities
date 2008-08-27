@@ -33,6 +33,7 @@
             <tagBase>
               https://aislib.svn.sourceforge.net/svnroot/aislib/Java/tools/entities/tags/
             </tagBase>
+            <goals>deploy</goals>
           </configuration>
         </plugin>
         <plugin>
