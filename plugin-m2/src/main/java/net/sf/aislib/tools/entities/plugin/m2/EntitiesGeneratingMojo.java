@@ -7,45 +7,32 @@ import net.sf.aislib.tools.entities.library.Processor;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 
 /**
  * Generate class file with constants.
  *
- * @goal generate
- * @phase generate-sources
  * @author pikus
  */
+@Mojo(defaultPhase = LifecyclePhase.GENERATE_SOURCES, name = "generate")
 public class EntitiesGeneratingMojo extends AbstractMojo {
 
-  /**
-   * @parameter expression="${project.build.directory}/generated-sources/entities"
-   */
+  @Parameter(defaultValue = "${project.build.directory}/generated-sources/entities")
   private File outputDirectory;
 
-  /**
-   * @parameter name of source file containing entities.
-   * @required
-   */
+  @Parameter(required = true)
   private File sourceFile;
 
-  /**
-   * @parameter name of result file name (<tt>.java</tt> extension will be added).
-   */
+  @Parameter
   private String resultName = "Entities";
 
-  /**
-   * @parameter package name.
-   * @required
-   */
+  @Parameter(required = true)
   private String packageName;
 
-  /**
-   * @parameter expression="${project}"
-   *
-   * @required
-   */
+  @Parameter(defaultValue = "${project}", required = true)
   private MavenProject project;
 
   public void execute() throws MojoExecutionException, MojoFailureException {
